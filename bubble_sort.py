@@ -17,7 +17,7 @@ class bubble_sort(object):
                     arr[i], arr[i-1]=arr[i-1], arr[i]
                     swapped=True
         return arr
-
-bs = bubble_sort()
-
-benchmark(bs, n=[10, 100, 1000, 10000])
+if __name__=="__main__":
+    bs = bubble_sort()
+    result=benchmark(bs, n=[10, 100, 1000, 10000])
+    print(result)

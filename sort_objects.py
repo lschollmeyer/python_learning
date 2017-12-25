@@ -6,8 +6,6 @@ def create_array(length=10, maxint=100):
 
 def benchmark(sort_name, n=[10, 100, 1000, 10000]):
     from time import time
-    
-    #c_sort=sort_name()
 
     c_sort_time=[] #compare sort
     sort_base_time=[] #sort baseline
@@ -27,7 +25,8 @@ def benchmark(sort_name, n=[10, 100, 1000, 10000]):
 
         c_sort_time.append(time_stop - time_start)
 
-    print("n \tBuilt-In\t"+sort_name.name)
-    print("_________________________________________________")
+    table = "n \tBuilt-In\t"+sort_name.name+"\n"
+    table = table + "_________________________________________________\n"
     for i, cur_n in enumerate(n):
-        print("%d\t%0.7f \t%0.7f"%(cur_n, sort_base_time[i], c_sort_time[i]))
+        table = table + "%d\t%0.7f \t%0.7f"%(cur_n, sort_base_time[i], c_sort_time[i])+"\n"
+    return table
